@@ -82,15 +82,10 @@ const ICONS = {
   Star: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
   CheckCircle2: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon text-success"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>`,
   Building2: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 0 2 2h-4"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>`,
-  Scale: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h18"/></svg>`,
-  LayoutDashboard: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>`,
-  User: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`,
-  Users: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
-  Settings: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.38a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>`,
-  Shield: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>`
+  Scale: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h18"/></svg>`
 };
 
-// Base Layout Renderer for Guest Public View
+// Public Layout Renderer
 function renderGuestLayout(title: string, content: string, currentPath: string = '/') {
   return `<!DOCTYPE html>
 <html lang="en">
@@ -98,7 +93,6 @@ function renderGuestLayout(title: string, content: string, currentPath: string =
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${title} — WebFoxx Colleges</title>
-  <meta name="description" content="India's premier college and institution discovery platform. Explore fees, NIRF rankings, courses, and compare colleges without spam calls.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -124,7 +118,6 @@ function renderGuestLayout(title: string, content: string, currentPath: string =
       --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
       --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: var(--font-primary); background-color: var(--color-background-gray); color: var(--color-text-main); line-height: 1.5; min-height: 100vh; display: flex; flex-direction: column; }
     a { text-decoration: none; color: inherit; }
@@ -132,18 +125,15 @@ function renderGuestLayout(title: string, content: string, currentPath: string =
     .flex-align { display: flex; align-items: center; gap: 0.4rem; }
     .lucide-icon { display: inline-block; vertical-align: middle; flex-shrink: 0; }
     .text-success { color: var(--color-success); }
-
     .site-header { background-color: #ffffff; border-bottom: 1px solid var(--color-border-gray); position: sticky; top: 0; z-index: 100; box-shadow: var(--shadow-sm); }
     .header-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
     .brand-logo { display: flex; align-items: center; gap: 0.75rem; }
     .brand-icon { width: 40px; height: 40px; border-radius: var(--radius-md); background-color: var(--color-webfoxx-blue-light); color: var(--color-webfoxx-blue); display: flex; align-items: center; justify-content: center; }
     .brand-title { font-weight: 800; font-size: 1.25rem; color: var(--color-midnight-navy); line-height: 1.1; }
     .brand-tagline { font-size: 0.75rem; color: var(--color-webfoxx-blue); font-weight: 700; display: block; }
-
     .desktop-nav { display: flex; gap: 1.25rem; }
     .nav-link { font-weight: 600; font-size: 0.875rem; color: var(--color-text-muted); transition: color 0.2s; }
     .nav-link:hover, .nav-link.active { color: var(--color-webfoxx-blue); }
-
     .header-actions { display: flex; align-items: center; gap: 0.75rem; }
     .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.6rem 1.2rem; border-radius: var(--radius-md); font-weight: 700; font-size: 0.9rem; cursor: pointer; transition: all 0.2s; border: none; }
     .btn-primary { background-color: var(--color-webfoxx-blue); color: #fff; }
@@ -151,7 +141,6 @@ function renderGuestLayout(title: string, content: string, currentPath: string =
     .btn-outline { border: 1px solid var(--color-border-gray); background-color: #fff; color: var(--color-midnight-navy); }
     .btn-outline:hover { border-color: var(--color-webfoxx-blue); color: var(--color-webfoxx-blue); }
     .btn-sm { padding: 0.45rem 0.9rem; font-size: 0.825rem; }
-
     .site-footer { background-color: var(--color-midnight-navy); color: #fff; padding-top: 4rem; margin-top: auto; }
     .footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
     .footer-desc { color: #94a3b8; font-size: 0.875rem; margin-top: 0.75rem; line-height: 1.6; }
@@ -161,14 +150,11 @@ function renderGuestLayout(title: string, content: string, currentPath: string =
     .footer-bottom { background-color: #090d16; padding: 1.25rem 0; font-size: 0.825rem; color: #64748b; }
     .bottom-inner { display: flex; justify-content: space-between; align-items: center; }
     .trust-badge { color: #4ade80; font-weight: 600; }
-
     .card { background-color: #fff; border-radius: var(--radius-lg); padding: 1.75rem; border: 1px solid var(--color-border-gray); box-shadow: var(--shadow-sm); }
     .badge { display: inline-block; padding: 0.2rem 0.6rem; border-radius: var(--radius-sm); font-size: 0.75rem; font-weight: 700; }
     .badge-grade { background-color: #22c55e; color: #fff; }
     .badge-ownership { background-color: var(--color-webfoxx-blue-light); color: var(--color-webfoxx-blue); }
     .data-text { font-family: var(--font-data); }
-
-    @media (max-width: 768px) { .desktop-nav { display: none; } .footer-content { grid-template-columns: 1fr; gap: 2rem; } }
   </style>
 </head>
 <body>
@@ -218,13 +204,13 @@ function renderGuestLayout(title: string, content: string, currentPath: string =
         <a href="/rankings">NIRF Rankings</a>
       </div>
       <div class="footer-links">
-        <h4>Role Dashboards</h4>
-        <a href="/student/dashboard">Student Portal</a>
-        <a href="/rep/dashboard">College Rep Portal</a>
-        <a href="/content/dashboard">Content Manager</a>
-        <a href="/moderator/dashboard">Moderator Portal</a>
-        <a href="/admin/dashboard">Administrator</a>
-        <a href="/superadmin/dashboard">Super Administrator</a>
+        <h4>Role Workspaces</h4>
+        <a href="/student/dashboard">Student Dashboard</a>
+        <a href="/rep/dashboard">College Rep Dashboard</a>
+        <a href="/content/dashboard">Content Manager Dashboard</a>
+        <a href="/moderator/dashboard">Moderator Dashboard</a>
+        <a href="/admin/dashboard">Administrator Dashboard</a>
+        <a href="/superadmin/dashboard">Super Admin Dashboard</a>
       </div>
       <div class="footer-links">
         <h4>Trust & Legal</h4>
@@ -244,7 +230,7 @@ function renderGuestLayout(title: string, content: string, currentPath: string =
 </html>`;
 }
 
-// Dedicated Role Workspace Layout Renderer (with Role-specific Sidebar Navigation)
+// Dedicated Role Workspace Layout Renderer
 function renderRoleWorkspaceLayout(roleTitle: string, roleName: string, navSections: { title: string; items: { label: string; href: string }[] }[], content: string, currentPath: string) {
   return `<!DOCTYPE html>
 <html lang="en">
@@ -328,7 +314,7 @@ function renderRoleWorkspaceLayout(roleTitle: string, roleName: string, navSecti
 </html>`;
 }
 
-// 1. Public Guest Routes
+// 1. Guest Routes
 app.get('/', c => c.html(renderGuestLayout('WebFoxx Colleges — Find Colleges. Not Spam.', `
   <section style="background-color: var(--color-midnight-navy); color: #fff; padding: 4.5rem 0 5.5rem;">
     <div class="container" style="text-align: center; max-width: 850px;">
@@ -411,131 +397,146 @@ app.get('/compare', c => c.html(renderGuestLayout('Compare Matrix', `<section cl
 app.get('/scholarships', c => c.html(renderGuestLayout('Scholarships', `<section class="container" style="padding:4rem 1.5rem;"><h1>Scholarships & Aid</h1></section>`, '/scholarships')));
 app.get('/login', c => c.html(renderGuestLayout('Sign In', `<section class="container" style="padding:5rem 1.5rem; text-align:center;"><h1>User Sign In</h1></section>`, '/login')));
 
-// 2. Role Workspace 1: Student Dedicated Navigation Workspace
-app.get('/student/dashboard', c => {
-  const navSections = [
-    { title: 'Overview', items: [{ label: 'Dashboard', href: '/student/dashboard' }] },
-    { title: 'College Discovery', items: [{ label: 'Search Colleges', href: '/colleges' }, { label: 'Saved Colleges', href: '/student/saved' }, { label: 'Compare List', href: '/compare' }, { label: 'Recently Viewed', href: '#' }] },
-    { title: 'Applications', items: [{ label: 'My Applications', href: '#' }, { label: 'Application Tracker', href: '#' }, { label: 'Admission Timeline', href: '#' }, { label: 'Required Documents', href: '#' }] },
-    { title: 'Reviews & Community', items: [{ label: 'My Reviews', href: '#' }, { label: 'My Questions', href: '#' }, { label: 'My Answers', href: '#' }] },
-    { title: 'Scholarships', items: [{ label: 'Scholarship Tracker', href: '#' }, { label: 'Saved Scholarships', href: '#' }] },
-    { title: 'Account', items: [{ label: 'Notifications', href: '#' }, { label: 'Messages', href: '#' }, { label: 'Profile', href: '#' }, { label: 'Settings', href: '#' }] }
-  ];
-  return c.html(renderRoleWorkspaceLayout('Student Portal', 'Student', navSections, `
-    <h1 style="font-size:2rem; font-weight:800; margin-bottom:0.5rem; color:var(--color-midnight-navy);">Student Dashboard</h1>
-    <p style="color:var(--color-text-muted); margin-bottom:2rem;">Welcome back! Track saved colleges, application timelines, and reviews.</p>
-    <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:1.5rem;">
-      <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Saved Colleges</span><h2 style="font-size:2rem; font-weight:800; color:var(--color-webfoxx-blue);">3</h2></div>
-      <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Active Applications</span><h2 style="font-size:2rem; font-weight:800; color:var(--color-midnight-navy);">1</h2></div>
-      <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Scholarship Alerts</span><h2 style="font-size:2rem; font-weight:800; color:var(--color-success);">2 Active</h2></div>
-    </div>
-  `, '/student/dashboard'));
-});
+// 2. ROLE 1: Student Dashboard & Sub-modules
+const studentNav = [
+  { title: 'Overview', items: [{ label: 'Dashboard', href: '/student/dashboard' }] },
+  { title: 'College Discovery', items: [{ label: 'Search Colleges', href: '/colleges' }, { label: 'Saved Colleges', href: '/student/saved' }, { label: 'Compare List', href: '/compare' }, { label: 'Recently Viewed', href: '/student/recent' }] },
+  { title: 'Applications', items: [{ label: 'My Applications', href: '/student/applications' }, { label: 'Application Tracker', href: '/student/tracker' }] },
+  { title: 'Reviews & Community', items: [{ label: 'My Reviews', href: '/student/reviews' }, { label: 'My Questions', href: '/student/questions' }] },
+  { title: 'Scholarships', items: [{ label: 'Scholarship Tracker', href: '/student/scholarships' }] },
+  { title: 'Account', items: [{ label: 'Profile & Settings', href: '/student/settings' }] }
+];
 
-// 3. Role Workspace 2: College Representative Dedicated Navigation Workspace
-app.get('/rep/dashboard', c => {
-  const navSections = [
-    { title: 'Overview', items: [{ label: 'Dashboard', href: '/rep/dashboard' }] },
-    { title: 'Institution Management', items: [{ label: 'College Profile', href: '#' }, { label: 'Campus Information', href: '#' }, { label: 'Courses & Fees', href: '#' }, { label: 'Faculty & Departments', href: '#' }, { label: 'Placements & CTC', href: '#' }, { label: 'Infrastructure & Hostels', href: '#' }, { label: 'Gallery & Videos', href: '#' }] },
-    { title: 'Student Management', items: [{ label: 'Applications Received', href: '#' }, { label: 'Enquiries', href: '#' }, { label: 'Messages', href: '#' }, { label: 'FAQs Management', href: '#' }] },
-    { title: 'Analytics', items: [{ label: 'Visitor Analytics', href: '#' }, { label: 'Profile Performance', href: '#' }] },
-    { title: 'Account', items: [{ label: 'Notifications', href: '#' }, { label: 'Profile Settings', href: '#' }] }
-  ];
-  return c.html(renderRoleWorkspaceLayout('College Representative Portal', 'College Representative', navSections, `
-    <h1 style="font-size:2rem; font-weight:800; margin-bottom:0.5rem; color:var(--color-midnight-navy);">College Representative Workspace</h1>
-    <p style="color:var(--color-text-muted); margin-bottom:2rem;">Manage verified institution profiles, admissions, and student enquiries for IIT Bombay.</p>
-    <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:1.5rem;">
-      <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Profile Views</span><h2 style="font-size:2rem; font-weight:800; color:var(--color-webfoxx-blue);">14,280</h2></div>
-      <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Student Enquiries</span><h2 style="font-size:2rem; font-weight:800; color:var(--color-midnight-navy);">48 Pending</h2></div>
-      <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Verification Status</span><h2 style="font-size:1.25rem; font-weight:800; color:var(--color-success);">VERIFIED REP</h2></div>
-    </div>
-  `, '/rep/dashboard'));
-});
+app.get('/student/dashboard', c => c.html(renderRoleWorkspaceLayout('Student Portal', 'Student', studentNav, `
+  <h1 style="font-size:2rem; font-weight:800; margin-bottom:0.5rem; color:var(--color-midnight-navy);">Student Overview Dashboard</h1>
+  <p style="color:var(--color-text-muted); margin-bottom:2rem;">Welcome back! Manage your saved colleges, admissions timelines, and peer reviews.</p>
+  <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:1.5rem;">
+    <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Saved Colleges</span><h2 style="font-size:2rem; font-weight:800; color:var(--color-webfoxx-blue);">3</h2></div>
+    <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Active Applications</span><h2 style="font-size:2rem; font-weight:800; color:var(--color-midnight-navy);">1</h2></div>
+    <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Scholarship Alerts</span><h2 style="font-size:2rem; font-weight:800; color:var(--color-success);">2 Active</h2></div>
+  </div>
+`, '/student/dashboard')));
 
-// 4. Role Workspace 3: Content Manager Dedicated Navigation Workspace
-app.get('/content/dashboard', c => {
-  const navSections = [
-    { title: 'Overview', items: [{ label: 'Dashboard', href: '/content/dashboard' }] },
-    { title: 'Institutions', items: [{ label: 'Colleges Directory', href: '#' }, { label: 'Universities Directory', href: '#' }, { label: 'Categories', href: '#' }] },
-    { title: 'Academic Data', items: [{ label: 'Courses Database', href: '#' }, { label: 'Entrance Exams', href: '#' }, { label: 'Scholarships Directory', href: '#' }, { label: 'NIRF Rankings', href: '#' }] },
-    { title: 'Location Master', items: [{ label: 'Countries', href: '#' }, { label: 'States', href: '#' }, { label: 'Cities', href: '#' }] },
-    { title: 'Content & Editorial', items: [{ label: 'Articles & News', href: '#' }, { label: 'Media Library', href: '#' }, { label: 'SEO Management', href: '#' }] }
-  ];
-  return c.html(renderRoleWorkspaceLayout('Content Manager Portal', 'Content Manager', navSections, `
-    <h1 style="font-size:2rem; font-weight:800; margin-bottom:0.5rem; color:var(--color-midnight-navy);">Content Manager Workspace</h1>
-    <p style="color:var(--color-text-muted); margin-bottom:2rem;">Maintain institutional datasets, course catalogs, and editorial publications.</p>
-    <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:1.5rem;">
-      <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Total Institutions</span><h2 style="font-size:2rem; font-weight:800; color:var(--color-webfoxx-blue);">5,420</h2></div>
-      <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Pending Content Edits</span><h2 style="font-size:2rem; font-weight:800; color:var(--color-midnight-navy);">12</h2></div>
-      <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Published Articles</span><h2 style="font-size:2rem; font-weight:800; color:var(--color-success);">142</h2></div>
-    </div>
-  `, '/content/dashboard'));
-});
+app.get('/student/saved', c => c.html(renderRoleWorkspaceLayout('Saved Colleges — Student', 'Student', studentNav, `
+  <h1 style="font-size:2rem; font-weight:800; margin-bottom:0.5rem; color:var(--color-midnight-navy);">Saved Colleges</h1>
+  <p style="color:var(--color-text-muted); margin-bottom:1.5rem;">Your shortlisted institutions for admission tracking.</p>
+  <div class="card">
+    <h3>IIT Bombay, IIM Ahmedabad, BITS Pilani</h3>
+  </div>
+`, '/student/saved')));
 
-// 5. Role Workspace 4: Moderator Dedicated Navigation Workspace
-app.get('/moderator/dashboard', c => {
-  const navSections = [
-    { title: 'Overview', items: [{ label: 'Dashboard', href: '/moderator/dashboard' }] },
-    { title: 'Moderation Queue', items: [{ label: 'Pending Reviews', href: '#' }, { label: 'Reported Content', href: '#' }, { label: 'Pending Q&A', href: '#' }, { label: 'College Verifications', href: '#' }, { label: 'Representative Approvals', href: '#' }] },
-    { title: 'Logs & History', items: [{ label: 'Moderation History', href: '#' }, { label: 'Activity Logs', href: '#' }] }
-  ];
-  return c.html(renderRoleWorkspaceLayout('Moderator Portal', 'Moderator', navSections, `
-    <h1 style="font-size:2rem; font-weight:800; margin-bottom:0.5rem; color:var(--color-midnight-navy);">Moderator Quality Workspace</h1>
-    <p style="color:var(--color-text-muted); margin-bottom:2rem;">Verify institutional claims, moderate student reviews, and approve representative credentials.</p>
-    <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:1.5rem;">
-      <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Pending Student Reviews</span><h2 style="font-size:2rem; font-weight:800; color:var(--color-webfoxx-blue);">18</h2></div>
-      <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Rep Verification Queue</span><h2 style="font-size:2rem; font-weight:800; color:var(--color-midnight-navy);">4</h2></div>
-      <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Moderation Score</span><h2 style="font-size:2rem; font-weight:800; color:var(--color-success);">99.8%</h2></div>
-    </div>
-  `, '/moderator/dashboard'));
-});
+app.get('/student/applications', c => c.html(renderRoleWorkspaceLayout('My Applications — Student', 'Student', studentNav, `
+  <h1 style="font-size:2rem; font-weight:800; margin-bottom:0.5rem; color:var(--color-midnight-navy);">Application Tracker</h1>
+  <p style="color:var(--color-text-muted); margin-bottom:1.5rem;">Monitor application statuses across target institutions.</p>
+  <div class="card">
+    <span class="badge badge-grade">Submitted</span>
+    <h3 style="margin-top:0.5rem;">B.Tech CSE Application — IIT Bombay</h3>
+  </div>
+`, '/student/applications')));
 
-// 6. Role Workspace 5: Administrator Dedicated Navigation Workspace
-app.get('/admin/dashboard', c => {
-  const navSections = [
-    { title: 'Overview', items: [{ label: 'Dashboard', href: '/admin/dashboard' }] },
-    { title: 'User Governance', items: [{ label: 'Students', href: '#' }, { label: 'College Representatives', href: '#' }, { label: 'Content Managers', href: '#' }, { label: 'Moderators', href: '#' }, { label: 'Roles & Permissions', href: '#' }] },
-    { title: 'Institution Management', items: [{ label: 'Colleges', href: '#' }, { label: 'Universities', href: '#' }, { label: 'Scholarships', href: '#' }] },
-    { title: 'Operations', items: [{ label: 'Analytics Reports', href: '#' }, { label: 'Audit Logs', href: '#' }, { label: 'Support Tickets', href: '#' }] },
-    { title: 'Settings', items: [{ label: 'System Configuration', href: '#' }, { label: 'Email Templates', href: '#' }] }
-  ];
-  return c.html(renderRoleWorkspaceLayout('Administrator Workspace', 'Administrator', navSections, `
-    <h1 style="font-size:2rem; font-weight:800; margin-bottom:0.5rem; color:var(--color-midnight-navy);">Platform Administrator Workspace</h1>
-    <p style="color:var(--color-text-muted); margin-bottom:2rem;">Governance over platform operations, users, institutional verification, and analytics.</p>
-    <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:1.5rem;">
-      <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Total Users</span><h2 style="font-size:2rem; font-weight:800; color:var(--color-webfoxx-blue);">128,490</h2></div>
-      <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Verified Representatives</span><h2 style="font-size:2rem; font-weight:800; color:var(--color-midnight-navy);">1,240</h2></div>
-      <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">System Operational Health</span><h2 style="font-size:1.25rem; font-weight:800; color:var(--color-success);">100% HEALTHY</h2></div>
-    </div>
-  `, '/admin/dashboard'));
-});
+// 3. ROLE 2: College Representative Dashboard & Sub-modules
+const repNav = [
+  { title: 'Overview', items: [{ label: 'Dashboard', href: '/rep/dashboard' }] },
+  { title: 'Institution Profile', items: [{ label: 'College Profile', href: '/rep/profile' }, { label: 'Courses & Fees', href: '/rep/courses' }, { label: 'Placements & Faculty', href: '/rep/placements' }] },
+  { title: 'Student Enquiries', items: [{ label: 'Applications & Messages', href: '/rep/enquiries' }] },
+  { title: 'Analytics', items: [{ label: 'Profile Analytics', href: '/rep/analytics' }] }
+];
 
-// 7. Role Workspace 6: Super Administrator Dedicated Navigation Workspace
-app.get('/superadmin/dashboard', c => {
-  const navSections = [
-    { title: 'Overview', items: [{ label: 'Dashboard', href: '/superadmin/dashboard' }] },
-    { title: 'Organization & Billing', items: [{ label: 'Organizations', href: '#' }, { label: 'Subscriptions & Plans', href: '#' }, { label: 'Billing Settings', href: '#' }] },
-    { title: 'Security & Access', items: [{ label: 'Role Matrix', href: '#' }, { label: 'API Keys & OAuth', href: '#' }, { label: 'SSO Configuration', href: '#' }] },
-    { title: 'Infrastructure', items: [{ label: 'System Health', href: '#' }, { label: 'Feature Flags', href: '#' }, { label: 'Maintenance Mode', href: '#' }, { label: 'Backups & Logs', href: '#' }] },
-    { title: 'Global Settings', items: [{ label: 'Site Branding', href: '#' }, { label: 'CDN & Storage', href: '#' }, { label: 'Email & SMS Services', href: '#' }] }
-  ];
-  return c.html(renderRoleWorkspaceLayout('Super Administrator Workspace', 'Super Administrator', navSections, `
-    <h1 style="font-size:2rem; font-weight:800; margin-bottom:0.5rem; color:var(--color-midnight-navy);">Super Administrator Governance</h1>
-    <p style="color:var(--color-text-muted); margin-bottom:2rem;">Global platform control, infrastructure health monitoring, security API keys, and feature flags.</p>
-    <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:1.5rem;">
-      <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Active Feature Flags</span><h2 style="font-size:2rem; font-weight:800; color:var(--color-webfoxx-blue);">14 Enabled</h2></div>
-      <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Worker Request Rate</span><h2 style="font-size:2rem; font-weight:800; color:var(--color-midnight-navy);">4,200 req/min</h2></div>
-      <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Infrastructure Status</span><h2 style="font-size:1.25rem; font-weight:800; color:var(--color-success);">CLOUDFLARE EDGE OK</h2></div>
-    </div>
-  `, '/superadmin/dashboard'));
-});
+app.get('/rep/dashboard', c => c.html(renderRoleWorkspaceLayout('Representative Portal', 'College Representative', repNav, `
+  <h1 style="font-size:2rem; font-weight:800; margin-bottom:0.5rem; color:var(--color-midnight-navy);">College Representative Dashboard</h1>
+  <p style="color:var(--color-text-muted); margin-bottom:2rem;">Manage verified institution profiles, admissions, and student enquiries for IIT Bombay.</p>
+  <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:1.5rem;">
+    <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Profile Views</span><h2 style="font-size:2rem; font-weight:800; color:var(--color-webfoxx-blue);">14,280</h2></div>
+    <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Student Enquiries</span><h2 style="font-size:2rem; font-weight:800; color:var(--color-midnight-navy);">48 Pending</h2></div>
+    <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Verification Status</span><h2 style="font-size:1.25rem; font-weight:800; color:var(--color-success);">VERIFIED REP</h2></div>
+  </div>
+`, '/rep/dashboard')));
+
+app.get('/rep/profile', c => c.html(renderRoleWorkspaceLayout('College Profile Editor — Rep', 'College Representative', repNav, `
+  <h1 style="font-size:2rem; font-weight:800; margin-bottom:0.5rem; color:var(--color-midnight-navy);">College Profile Editor</h1>
+  <div class="card">
+    <label style="font-weight:700; display:block; margin-bottom:0.5rem;">Overview & Highlights</label>
+    <textarea style="width:100%; height:120px; padding:0.75rem; border-radius:8px; border:1px solid #cbd5e1; font-family:inherit;">Indian Institute of Technology Bombay is a premier public technical research university located in Powai, Mumbai...</textarea>
+    <button class="btn btn-primary" style="margin-top:1rem;">Save Profile Updates</button>
+  </div>
+`, '/rep/profile')));
+
+// 4. ROLE 3: Content Manager Dashboard & Sub-modules
+const contentNav = [
+  { title: 'Overview', items: [{ label: 'Dashboard', href: '/content/dashboard' }] },
+  { title: 'Institutions', items: [{ label: 'Colleges Directory', href: '/content/colleges' }, { label: 'Universities', href: '/content/universities' }] },
+  { title: 'Academic Master', items: [{ label: 'Courses & Exams', href: '/content/academic' }, { label: 'NIRF Rankings', href: '/content/rankings' }] },
+  { title: 'Editorial & Media', items: [{ label: 'Articles & News', href: '/content/articles' }] }
+];
+
+app.get('/content/dashboard', c => c.html(renderRoleWorkspaceLayout('Content Manager Portal', 'Content Manager', contentNav, `
+  <h1 style="font-size:2rem; font-weight:800; margin-bottom:0.5rem; color:var(--color-midnight-navy);">Content Manager Dashboard</h1>
+  <p style="color:var(--color-text-muted); margin-bottom:2rem;">Maintain institutional datasets, course catalogs, and editorial publications.</p>
+  <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:1.5rem;">
+    <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Total Institutions</span><h2 style="font-size:2rem; font-weight:800; color:var(--color-webfoxx-blue);">5,420</h2></div>
+    <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Pending Edits</span><h2 style="font-size:2rem; font-weight:800; color:var(--color-midnight-navy);">12</h2></div>
+    <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Published Articles</span><h2 style="font-size:2rem; font-weight:800; color:var(--color-success);">142</h2></div>
+  </div>
+`, '/content/dashboard')));
+
+// 5. ROLE 4: Moderator Dashboard & Sub-modules
+const moderatorNav = [
+  { title: 'Overview', items: [{ label: 'Dashboard', href: '/moderator/dashboard' }] },
+  { title: 'Moderation Queue', items: [{ label: 'Pending Reviews', href: '/moderator/reviews' }, { label: 'Rep Verifications', href: '/moderator/verifications' }] },
+  { title: 'Audit Logs', items: [{ label: 'Moderation Logs', href: '/moderator/logs' }] }
+];
+
+app.get('/moderator/dashboard', c => c.html(renderRoleWorkspaceLayout('Moderator Portal', 'Moderator', moderatorNav, `
+  <h1 style="font-size:2rem; font-weight:800; margin-bottom:0.5rem; color:var(--color-midnight-navy);">Moderator Dashboard</h1>
+  <p style="color:var(--color-text-muted); margin-bottom:2rem;">Verify institutional claims, moderate student reviews, and approve representative credentials.</p>
+  <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:1.5rem;">
+    <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Pending Reviews</span><h2 style="font-size:2rem; font-weight:800; color:var(--color-webfoxx-blue);">18</h2></div>
+    <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Rep Verifications</span><h2 style="font-size:2rem; font-weight:800; color:var(--color-midnight-navy);">4</h2></div>
+    <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Moderation Score</span><h2 style="font-size:2rem; font-weight:800; color:var(--color-success);">99.8%</h2></div>
+  </div>
+`, '/moderator/dashboard')));
+
+// 6. ROLE 5: Administrator Dashboard & Sub-modules
+const adminNav = [
+  { title: 'Overview', items: [{ label: 'Dashboard', href: '/admin/dashboard' }] },
+  { title: 'Governance', items: [{ label: 'Users & Permissions', href: '/admin/users' }, { label: 'Institutions Master', href: '/admin/institutions' }] },
+  { title: 'Operations', items: [{ label: 'Analytics Reports', href: '/admin/operations' }] }
+];
+
+app.get('/admin/dashboard', c => c.html(renderRoleWorkspaceLayout('Administrator Portal', 'Administrator', adminNav, `
+  <h1 style="font-size:2rem; font-weight:800; margin-bottom:0.5rem; color:var(--color-midnight-navy);">Administrator Dashboard</h1>
+  <p style="color:var(--color-text-muted); margin-bottom:2rem;">Governance over platform operations, users, institutional verification, and analytics.</p>
+  <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:1.5rem;">
+    <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Total Platform Users</span><h2 style="font-size:2rem; font-weight:800; color:var(--color-webfoxx-blue);">128,490</h2></div>
+    <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Verified Reps</span><h2 style="font-size:2rem; font-weight:800; color:var(--color-midnight-navy);">1,240</h2></div>
+    <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">System Operational Status</span><h2 style="font-size:1.25rem; font-weight:800; color:var(--color-success);">100% OPERATIONAL</h2></div>
+  </div>
+`, '/admin/dashboard')));
+
+// 7. ROLE 6: Super Administrator Dashboard & Sub-modules
+const superAdminNav = [
+  { title: 'Overview', items: [{ label: 'Dashboard', href: '/superadmin/dashboard' }] },
+  { title: 'Organization', items: [{ label: 'Subscriptions & Billing', href: '/superadmin/organization' }] },
+  { title: 'Security', items: [{ label: 'API Keys & OAuth', href: '/superadmin/security' }] },
+  { title: 'Infrastructure', items: [{ label: 'System Health & Flags', href: '/superadmin/infrastructure' }] }
+];
+
+app.get('/superadmin/dashboard', c => c.html(renderRoleWorkspaceLayout('Super Administrator Portal', 'Super Administrator', superAdminNav, `
+  <h1 style="font-size:2rem; font-weight:800; margin-bottom:0.5rem; color:var(--color-midnight-navy);">Super Administrator Dashboard</h1>
+  <p style="color:var(--color-text-muted); margin-bottom:2rem;">Global platform control, infrastructure health monitoring, security API keys, and feature flags.</p>
+  <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:1.5rem;">
+    <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Active Feature Flags</span><h2 style="font-size:2rem; font-weight:800; color:var(--color-webfoxx-blue);">14 Enabled</h2></div>
+    <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Worker Request Rate</span><h2 style="font-size:2rem; font-weight:800; color:var(--color-midnight-navy);">4,200 req/min</h2></div>
+    <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Edge Infrastructure Status</span><h2 style="font-size:1.25rem; font-weight:800; color:var(--color-success);">CLOUDFLARE EDGE OK</h2></div>
+  </div>
+`, '/superadmin/dashboard')));
 
 // Health Check API
 app.get('/health', c => c.json({
   status: 'OK',
   worker: 'webfoxx-colleges-worker',
   domain: 'college.webfoxx.com',
-  architecture: '7-Role Dedicated Navigation Engine',
+  dashboards: ['Student', 'College Representative', 'Content Manager', 'Moderator', 'Administrator', 'Super Administrator'],
   timestamp: new Date().toISOString()
 }));
 
