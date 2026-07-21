@@ -61,16 +61,16 @@ const SEED_COLLEGES = [
 ];
 
 const SEED_COURSES = [
-  { name: 'B.Tech Computer Science & Engineering', duration: '4 Years', level: 'UG', avgFees: '₹2.2L / yr' },
-  { name: 'MBA Business Analytics', duration: '2 Years', level: 'PG', avgFees: '₹12.5L / yr' },
-  { name: 'B.Des Industrial Design', duration: '4 Years', level: 'UG', avgFees: '₹1.8L / yr' },
-  { name: 'M.Tech Artificial Intelligence', duration: '2 Years', level: 'PG', avgFees: '₹1.5L / yr' }
+  { name: 'B.Tech Computer Science & Engineering', duration: '4 Years', level: 'Undergraduate', avgFees: '₹2.2L / yr', collegesCount: 840 },
+  { name: 'MBA Business Analytics', duration: '2 Years', level: 'Postgraduate', avgFees: '₹12.5L / yr', collegesCount: 420 },
+  { name: 'B.Des Industrial Design', duration: '4 Years', level: 'Undergraduate', avgFees: '₹1.8L / yr', collegesCount: 110 },
+  { name: 'M.Tech Artificial Intelligence', duration: '2 Years', level: 'Postgraduate', avgFees: '₹1.5L / yr', collegesCount: 230 }
 ];
 
 const SEED_EXAMS = [
-  { name: 'JEE Advanced 2026', category: 'Engineering', date: 'May 2026', mode: 'CBT Online' },
-  { name: 'CAT 2026', category: 'Management', date: 'Nov 2026', mode: 'CBT Online' },
-  { name: 'BITSAT 2026', category: 'Engineering', date: 'June 2026', mode: 'CBT Online' }
+  { name: 'JEE Advanced 2026', category: 'Engineering', date: 'May 2026', mode: 'CBT Online', conductingBody: 'IIT Kanpur' },
+  { name: 'CAT 2026', category: 'Management', date: 'Nov 2026', mode: 'CBT Online', conductingBody: 'IIM Kozhikode' },
+  { name: 'BITSAT 2026', category: 'Engineering', date: 'June 2026', mode: 'CBT Online', conductingBody: 'BITS Pilani' }
 ];
 
 // Lucide React SVG Outline Icon Helpers (Chapter 19 Compliant)
@@ -82,7 +82,9 @@ const ICONS = {
   Star: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
   CheckCircle2: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon text-success"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>`,
   Building2: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 0 2 2h-4"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>`,
-  Scale: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h18"/></svg>`
+  Scale: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h18"/></svg>`,
+  Lock: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`,
+  ArrowRight: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>`
 };
 
 // Public Layout Renderer
@@ -117,6 +119,7 @@ function renderGuestLayout(title: string, content: string, currentPath: string =
       --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
       --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
       --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: var(--font-primary); background-color: var(--color-background-gray); color: var(--color-text-main); line-height: 1.5; min-height: 100vh; display: flex; flex-direction: column; }
@@ -135,11 +138,11 @@ function renderGuestLayout(title: string, content: string, currentPath: string =
     .nav-link { font-weight: 600; font-size: 0.875rem; color: var(--color-text-muted); transition: color 0.2s; }
     .nav-link:hover, .nav-link.active { color: var(--color-webfoxx-blue); }
     .header-actions { display: flex; align-items: center; gap: 0.75rem; }
-    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.6rem 1.2rem; border-radius: var(--radius-md); font-weight: 700; font-size: 0.9rem; cursor: pointer; transition: all 0.2s; border: none; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.65rem 1.3rem; border-radius: var(--radius-md); font-weight: 700; font-size: 0.9rem; cursor: pointer; transition: all 0.2s; border: none; }
     .btn-primary { background-color: var(--color-webfoxx-blue); color: #fff; }
-    .btn-primary:hover { background-color: var(--color-webfoxx-blue-hover); }
+    .btn-primary:hover { background-color: var(--color-webfoxx-blue-hover); box-shadow: 0 4px 12px rgba(37,99,235,0.3); }
     .btn-outline { border: 1px solid var(--color-border-gray); background-color: #fff; color: var(--color-midnight-navy); }
-    .btn-outline:hover { border-color: var(--color-webfoxx-blue); color: var(--color-webfoxx-blue); }
+    .btn-outline:hover { border-color: var(--color-webfoxx-blue); color: var(--color-webfoxx-blue); background-color: var(--color-webfoxx-blue-light); }
     .btn-sm { padding: 0.45rem 0.9rem; font-size: 0.825rem; }
     .site-footer { background-color: var(--color-midnight-navy); color: #fff; padding-top: 4rem; margin-top: auto; }
     .footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
@@ -151,10 +154,16 @@ function renderGuestLayout(title: string, content: string, currentPath: string =
     .bottom-inner { display: flex; justify-content: space-between; align-items: center; }
     .trust-badge { color: #4ade80; font-weight: 600; }
     .card { background-color: #fff; border-radius: var(--radius-lg); padding: 1.75rem; border: 1px solid var(--color-border-gray); box-shadow: var(--shadow-sm); }
-    .badge { display: inline-block; padding: 0.2rem 0.6rem; border-radius: var(--radius-sm); font-size: 0.75rem; font-weight: 700; }
+    .badge { display: inline-block; padding: 0.25rem 0.65rem; border-radius: var(--radius-sm); font-size: 0.75rem; font-weight: 700; }
     .badge-grade { background-color: #22c55e; color: #fff; }
     .badge-ownership { background-color: var(--color-webfoxx-blue-light); color: var(--color-webfoxx-blue); }
     .data-text { font-family: var(--font-data); }
+
+    /* Login & Form Styling */
+    .form-group { margin-bottom: 1.25rem; text-align: left; }
+    .form-label { display: block; font-size: 0.875rem; font-weight: 700; color: var(--color-midnight-navy); margin-bottom: 0.4rem; }
+    .form-input { width: 100%; padding: 0.8rem 1rem; border: 1px solid var(--color-border-gray); border-radius: var(--radius-md); font-family: inherit; font-size: 0.95rem; outline: none; transition: border-color 0.2s; }
+    .form-input:focus { border-color: var(--color-webfoxx-blue); box-shadow: 0 0 0 3px rgba(37,99,235,0.15); }
   </style>
 </head>
 <body>
@@ -204,7 +213,7 @@ function renderGuestLayout(title: string, content: string, currentPath: string =
         <a href="/rankings">NIRF Rankings</a>
       </div>
       <div class="footer-links">
-        <h4>Role Workspaces</h4>
+        <h4>Role Dashboards</h4>
         <a href="/student/dashboard">Student Dashboard</a>
         <a href="/rep/dashboard">College Rep Dashboard</a>
         <a href="/content/dashboard">Content Manager Dashboard</a>
@@ -230,7 +239,7 @@ function renderGuestLayout(title: string, content: string, currentPath: string =
 </html>`;
 }
 
-// Dedicated Role Workspace Layout Renderer
+// Role Workspace Layout
 function renderRoleWorkspaceLayout(roleTitle: string, roleName: string, navSections: { title: string; items: { label: string; href: string }[] }[], content: string, currentPath: string) {
   return `<!DOCTYPE html>
 <html lang="en">
@@ -314,7 +323,7 @@ function renderRoleWorkspaceLayout(roleTitle: string, roleName: string, navSecti
 </html>`;
 }
 
-// 1. Guest Routes
+// 1. Landing Page
 app.get('/', c => c.html(renderGuestLayout('WebFoxx Colleges — Find Colleges. Not Spam.', `
   <section style="background-color: var(--color-midnight-navy); color: #fff; padding: 4.5rem 0 5.5rem;">
     <div class="container" style="text-align: center; max-width: 850px;">
@@ -359,18 +368,64 @@ app.get('/', c => c.html(renderGuestLayout('WebFoxx Colleges — Find Colleges. 
   </section>
 `, '/')));
 
+// 2. High-Aesthetic Full Login / Sign In Portal
+app.get('/login', c => c.html(renderGuestLayout('User Sign In — WebFoxx Colleges', `
+  <section class="container" style="padding: 4rem 1.5rem; display: flex; justify-content: center; align-items: center; min-height: calc(100vh - 200px);">
+    <div class="card" style="width: 100%; max-width: 480px; text-align: center; box-shadow: var(--shadow-xl); border: 1px solid var(--color-border-gray); padding: 2.5rem;">
+      <div style="width: 56px; height: 56px; background-color: var(--color-webfoxx-blue-light); color: var(--color-webfoxx-blue); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem;">
+        ${ICONS.GraduationCap}
+      </div>
+
+      <h1 style="font-size: 1.75rem; font-weight: 800; color: var(--color-midnight-navy); margin-bottom: 0.4rem;">Sign In to WebFoxx</h1>
+      <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: 2rem;">Zero spam calls. Access saved colleges, application trackers, and role dashboards.</p>
+
+      <!-- Role Selection Preview Tabs -->
+      <div style="display: flex; background-color: var(--color-background-gray); padding: 0.3rem; border-radius: var(--radius-md); margin-bottom: 1.75rem;">
+        <button type="button" style="flex: 1; padding: 0.5rem; border: none; background: #fff; font-weight: 700; border-radius: var(--radius-sm); color: var(--color-webfoxx-blue); box-shadow: var(--shadow-sm); cursor: pointer;">Student</button>
+        <button type="button" style="flex: 1; padding: 0.5rem; border: none; background: transparent; font-weight: 600; border-radius: var(--radius-sm); color: var(--color-text-muted); cursor: pointer;">College Rep</button>
+        <button type="button" style="flex: 1; padding: 0.5rem; border: none; background: transparent; font-weight: 600; border-radius: var(--radius-sm); color: var(--color-text-muted); cursor: pointer;">Admin</button>
+      </div>
+
+      <form onsubmit="event.preventDefault(); alert('Instant 1-click Mobile OTP dispatched!');">
+        <div class="form-group">
+          <label class="form-label">Mobile Phone Number</label>
+          <div style="display: flex; gap: 0.5rem;">
+            <span style="display: flex; align-items: center; padding: 0 0.8rem; background: var(--color-background-gray); border: 1px solid var(--color-border-gray); border-radius: var(--radius-md); font-weight: 700; color: var(--color-midnight-navy); font-size: 0.9rem;">+91</span>
+            <input type="tel" class="form-input" placeholder="98765 43210" required />
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.85rem; font-size: 0.95rem; margin-top: 0.5rem;">
+          Send One-Time Password (OTP)
+        </button>
+      </form>
+
+      <div style="margin-top: 1.75rem; padding-top: 1.25rem; border-top: 1px solid var(--color-border-gray); display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: var(--color-text-muted);">
+        <span>Don't have an account? <a href="/login" style="color: var(--color-webfoxx-blue); font-weight: 700;">Register Now</a></span>
+        <a href="/student/dashboard" style="color: var(--color-webfoxx-blue); font-weight: 700;">Quick Demo →</a>
+      </div>
+    </div>
+  </section>
+`, '/login')));
+
+// 3. Find & Search Colleges
 app.get('/colleges', c => c.html(renderGuestLayout('Search & Browse Colleges', `
   <section class="container" style="padding: 4rem 1.5rem;">
     <h1 style="font-size: 2.25rem; font-weight: 800; color: var(--color-midnight-navy); margin-bottom: 0.5rem;">Explore & Search Colleges</h1>
-    <p style="color: var(--color-text-muted); margin-bottom: 2rem;">Showing verified institution profiles.</p>
+    <p style="color: var(--color-text-muted); margin-bottom: 2rem;">Showing verified institution profiles with NIRF rankings and average packages.</p>
+
     <div style="display: flex; flex-direction: column; gap: 1.5rem;">
       ${SEED_COLLEGES.map(col => `
         <div class="card" style="display: flex; justify-content: space-between; align-items: center;">
           <div>
+            <div style="display: flex; gap: 0.5rem; margin-bottom: 0.4rem;">
+              <span class="badge badge-grade">NAAC ${col.naacGrade}</span>
+              <span class="badge badge-ownership">${col.ownership}</span>
+            </div>
             <h3 style="font-size: 1.35rem; font-weight: 800; color: var(--color-midnight-navy);">${col.name}</h3>
-            <p style="color: var(--color-text-muted); font-size: 0.9rem;" class="flex-align">${ICONS.MapPin} <span>${col.location.city}, ${col.location.state}</span></p>
+            <p style="color: var(--color-text-muted); font-size: 0.9rem;" class="flex-align">${ICONS.MapPin} <span>${col.location.city}, ${col.location.state} • Est. ${col.establishmentYear}</span></p>
           </div>
-          <a href="/colleges/${col.slug}" class="btn btn-primary btn-sm">View Profile</a>
+          <a href="/colleges/${col.slug}" class="btn btn-primary btn-sm flex-align"><span>View Profile</span> ${ICONS.ArrowRight}</a>
         </div>
       `).join('')}
     </div>
@@ -382,6 +437,7 @@ app.get('/colleges/:slug', c => {
   return c.html(renderGuestLayout(`${col.name} Profile`, `
     <section class="container" style="padding: 4rem 1.5rem;">
       <div class="card">
+        <span class="badge badge-grade" style="margin-bottom: 0.75rem;">NAAC ${col.naacGrade}</span>
         <h1 style="font-size: 2.25rem; font-weight: 800; color: var(--color-midnight-navy); margin-bottom: 0.5rem;">${col.name}</h1>
         <p style="color: var(--color-text-muted); font-size: 1rem; margin-bottom: 1.5rem;">${col.overview}</p>
         <a href="/compare?colleges=${col.id}" class="btn btn-primary">Compare Institution</a>
@@ -390,26 +446,145 @@ app.get('/colleges/:slug', c => {
   `, '/colleges'));
 });
 
-app.get('/courses', c => c.html(renderGuestLayout('Academic Courses', `<section class="container" style="padding:4rem 1.5rem;"><h1>Courses Directory</h1></section>`, '/courses')));
-app.get('/exams', c => c.html(renderGuestLayout('Entrance Exams', `<section class="container" style="padding:4rem 1.5rem;"><h1>Exams Directory</h1></section>`, '/exams')));
-app.get('/rankings', c => c.html(renderGuestLayout('College Rankings', `<section class="container" style="padding:4rem 1.5rem;"><h1>NIRF College Rankings</h1></section>`, '/rankings')));
-app.get('/compare', c => c.html(renderGuestLayout('Compare Matrix', `<section class="container" style="padding:4rem 1.5rem;"><h1>Compare Colleges Matrix</h1></section>`, '/compare')));
-app.get('/scholarships', c => c.html(renderGuestLayout('Scholarships', `<section class="container" style="padding:4rem 1.5rem;"><h1>Scholarships & Aid</h1></section>`, '/scholarships')));
-app.get('/login', c => c.html(renderGuestLayout('Sign In', `<section class="container" style="padding:5rem 1.5rem; text-align:center;"><h1>User Sign In</h1></section>`, '/login')));
+// 4. Courses, Exams, Rankings, Compare, Scholarships
+app.get('/courses', c => c.html(renderGuestLayout('Academic Courses Directory', `
+  <section class="container" style="padding: 4rem 1.5rem;">
+    <h1 style="font-size: 2.25rem; font-weight: 800; color: var(--color-midnight-navy); margin-bottom: 0.5rem;">Academic Courses Directory</h1>
+    <p style="color: var(--color-text-muted); margin-bottom: 2.5rem;">Explore top undergraduate and postgraduate degree programs in India.</p>
 
-// 2. ROLE 1: Student Dashboard & Sub-modules
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+      ${SEED_COURSES.map(course => `
+        <div class="card">
+          <span class="badge badge-ownership" style="margin-bottom: 0.5rem;">${course.level}</span>
+          <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--color-midnight-navy); margin-bottom: 0.4rem;">${course.name}</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.9rem;">Duration: ${course.duration} • ${course.collegesCount}+ Colleges</p>
+          <strong style="color: var(--color-webfoxx-blue); display: block; margin-top: 0.75rem;">Avg Fees: ${course.avgFees}</strong>
+        </div>
+      `).join('')}
+    </div>
+  </section>
+`, '/courses')));
+
+app.get('/exams', c => c.html(renderGuestLayout('Entrance Exams Directory', `
+  <section class="container" style="padding: 4rem 1.5rem;">
+    <h1 style="font-size: 2.25rem; font-weight: 800; color: var(--color-midnight-navy); margin-bottom: 0.5rem;">Entrance Exams Directory</h1>
+    <p style="color: var(--color-text-muted); margin-bottom: 2.5rem;">Key exam dates, cutoff trends, and participating universities.</p>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+      ${SEED_EXAMS.map(exam => `
+        <div class="card">
+          <span class="badge badge-grade" style="margin-bottom: 0.5rem;">${exam.category}</span>
+          <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--color-midnight-navy); margin-bottom: 0.4rem;">${exam.name}</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.9rem;">Conducting Body: ${exam.conductingBody} • Mode: ${exam.mode}</p>
+          <div style="margin-top: 1rem; color: var(--color-webfoxx-blue); font-weight: 700;">Exam Date: ${exam.date}</div>
+        </div>
+      `).join('')}
+    </div>
+  </section>
+`, '/exams')));
+
+app.get('/rankings', c => c.html(renderGuestLayout('NIRF College Rankings', `
+  <section class="container" style="padding: 4rem 1.5rem;">
+    <h1 style="font-size: 2.25rem; font-weight: 800; color: var(--color-midnight-navy); margin-bottom: 0.5rem;">NIRF & Verified Rankings</h1>
+    <p style="color: var(--color-text-muted); margin-bottom: 2.5rem;">Official Government NIRF scores and institutional accreditation ranks.</p>
+
+    <div class="card">
+      <table style="width: 100%; border-collapse: collapse; text-align: left;">
+        <thead>
+          <tr style="background-color: var(--color-background-gray);">
+            <th style="padding: 1rem; font-weight: 800;">NIRF Rank</th>
+            <th style="padding: 1rem; font-weight: 800;">Institution Name</th>
+            <th style="padding: 1rem; font-weight: 800;">City</th>
+            <th style="padding: 1rem; font-weight: 800;">Accreditation Score</th>
+          </tr>
+        </thead>
+        <tbody class="data-text">
+          <tr>
+            <td style="padding: 1rem; border-bottom: 1px solid var(--color-border-gray); font-weight: 800; color: var(--color-webfoxx-blue);">#1 Engineering</td>
+            <td style="padding: 1rem; border-bottom: 1px solid var(--color-border-gray); font-weight: 700;">IIT Bombay</td>
+            <td style="padding: 1rem; border-bottom: 1px solid var(--color-border-gray);">Mumbai</td>
+            <td style="padding: 1rem; border-bottom: 1px solid var(--color-border-gray);">89.42 / 100</td>
+          </tr>
+          <tr>
+            <td style="padding: 1rem; border-bottom: 1px solid var(--color-border-gray); font-weight: 800; color: var(--color-webfoxx-blue);">#1 Management</td>
+            <td style="padding: 1rem; border-bottom: 1px solid var(--color-border-gray); font-weight: 700;">IIM Ahmedabad</td>
+            <td style="padding: 1rem; border-bottom: 1px solid var(--color-border-gray);">Ahmedabad</td>
+            <td style="padding: 1rem; border-bottom: 1px solid var(--color-border-gray);">83.20 / 100</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+`, '/rankings')));
+
+app.get('/compare', c => c.html(renderGuestLayout('College Comparison Matrix', `
+  <section class="container" style="padding: 4rem 1.5rem;">
+    <h1 style="font-size: 2.25rem; font-weight: 800; color: var(--color-midnight-navy); margin-bottom: 0.5rem;">College Comparison Matrix</h1>
+    <p style="color: var(--color-text-muted); margin-bottom: 2.5rem;">Objective side-by-side comparison of fees, ratings, and placement records.</p>
+
+    <div style="overflow-x: auto; background: #fff; border-radius: var(--radius-lg); border: 1px solid var(--color-border-gray); box-shadow: var(--shadow-sm);">
+      <table style="width: 100%; border-collapse: collapse; text-align: left;">
+        <thead>
+          <tr style="background-color: var(--color-background-gray);">
+            <th style="padding: 1.25rem; font-weight: 800; border-bottom: 2px solid var(--color-border-gray); width: 220px;">Attribute</th>
+            ${SEED_COLLEGES.map(col => `
+              <th style="padding: 1.25rem; font-weight: 800; border-bottom: 2px solid var(--color-border-gray);">
+                <div style="font-size: 1.1rem; color: var(--color-midnight-navy);">${col.shortName}</div>
+                <div style="font-size: 0.8rem; color: var(--color-text-muted); font-weight: 500;">${col.location.city}</div>
+              </th>
+            `).join('')}
+          </tr>
+        </thead>
+        <tbody class="data-text">
+          <tr>
+            <td style="padding: 1rem 1.25rem; border-bottom: 1px solid var(--color-border-gray); font-weight: 700;">Establishment Year</td>
+            ${SEED_COLLEGES.map(col => `<td style="padding: 1rem 1.25rem; border-bottom: 1px solid var(--color-border-gray);">${col.establishmentYear}</td>`).join('')}
+          </tr>
+          <tr>
+            <td style="padding: 1rem 1.25rem; border-bottom: 1px solid var(--color-border-gray); font-weight: 700;">NAAC Grade</td>
+            ${SEED_COLLEGES.map(col => `<td style="padding: 1rem 1.25rem; border-bottom: 1px solid var(--color-border-gray);"><span class="badge badge-grade">Grade ${col.naacGrade}</span></td>`).join('')}
+          </tr>
+          <tr>
+            <td style="padding: 1rem 1.25rem; border-bottom: 1px solid var(--color-border-gray); font-weight: 700;">Highest CTC</td>
+            ${SEED_COLLEGES.map(col => `<td style="padding: 1rem 1.25rem; border-bottom: 1px solid var(--color-border-gray); font-weight: 800; color: var(--color-webfoxx-blue);">${col.highestPackage}</td>`).join('')}
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+`, '/compare')));
+
+app.get('/scholarships', c => c.html(renderGuestLayout('Scholarships & Financial Aid', `
+  <section class="container" style="padding: 4rem 1.5rem;">
+    <h1 style="font-size: 2.25rem; font-weight: 800; color: var(--color-midnight-navy); margin-bottom: 0.5rem;">Scholarships & Financial Aid</h1>
+    <p style="color: var(--color-text-muted); margin-bottom: 2.5rem;">Government grants, merit aid schemes, and institutional tuition fee waivers.</p>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+      <div class="card">
+        <span class="badge badge-ownership" style="margin-bottom: 0.5rem;">Government Aid</span>
+        <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--color-midnight-navy);">Central Sector Scholarship Scheme</h3>
+        <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Financial assistance up to ₹20,000 / yr for top 20th percentile college students.</p>
+      </div>
+      <div class="card">
+        <span class="badge badge-ownership" style="margin-bottom: 0.5rem;">Women Tech Aid</span>
+        <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--color-midnight-navy);">Pragati Scholarship Scheme</h3>
+        <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Up to ₹50,000 / yr tuition support for female engineering students.</p>
+      </div>
+    </div>
+  </section>
+`, '/scholarships')));
+
+// 5. Role Workspaces
 const studentNav = [
   { title: 'Overview', items: [{ label: 'Dashboard', href: '/student/dashboard' }] },
-  { title: 'College Discovery', items: [{ label: 'Search Colleges', href: '/colleges' }, { label: 'Saved Colleges', href: '/student/saved' }, { label: 'Compare List', href: '/compare' }, { label: 'Recently Viewed', href: '/student/recent' }] },
-  { title: 'Applications', items: [{ label: 'My Applications', href: '/student/applications' }, { label: 'Application Tracker', href: '/student/tracker' }] },
-  { title: 'Reviews & Community', items: [{ label: 'My Reviews', href: '/student/reviews' }, { label: 'My Questions', href: '/student/questions' }] },
-  { title: 'Scholarships', items: [{ label: 'Scholarship Tracker', href: '/student/scholarships' }] },
-  { title: 'Account', items: [{ label: 'Profile & Settings', href: '/student/settings' }] }
+  { title: 'College Discovery', items: [{ label: 'Search Colleges', href: '/colleges' }, { label: 'Saved Colleges', href: '/student/saved' }, { label: 'Compare List', href: '/compare' }] },
+  { title: 'Applications', items: [{ label: 'My Applications', href: '/student/applications' }] },
+  { title: 'Scholarships', items: [{ label: 'Scholarship Tracker', href: '/student/scholarships' }] }
 ];
 
 app.get('/student/dashboard', c => c.html(renderRoleWorkspaceLayout('Student Portal', 'Student', studentNav, `
   <h1 style="font-size:2rem; font-weight:800; margin-bottom:0.5rem; color:var(--color-midnight-navy);">Student Overview Dashboard</h1>
-  <p style="color:var(--color-text-muted); margin-bottom:2rem;">Welcome back! Manage your saved colleges, admissions timelines, and peer reviews.</p>
+  <p style="color:var(--color-text-muted); margin-bottom:2rem;">Welcome back! Track saved colleges, application timelines, and reviews.</p>
   <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:1.5rem;">
     <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Saved Colleges</span><h2 style="font-size:2rem; font-weight:800; color:var(--color-webfoxx-blue);">3</h2></div>
     <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Active Applications</span><h2 style="font-size:2rem; font-weight:800; color:var(--color-midnight-navy);">1</h2></div>
@@ -420,26 +595,18 @@ app.get('/student/dashboard', c => c.html(renderRoleWorkspaceLayout('Student Por
 app.get('/student/saved', c => c.html(renderRoleWorkspaceLayout('Saved Colleges — Student', 'Student', studentNav, `
   <h1 style="font-size:2rem; font-weight:800; margin-bottom:0.5rem; color:var(--color-midnight-navy);">Saved Colleges</h1>
   <p style="color:var(--color-text-muted); margin-bottom:1.5rem;">Your shortlisted institutions for admission tracking.</p>
-  <div class="card">
-    <h3>IIT Bombay, IIM Ahmedabad, BITS Pilani</h3>
-  </div>
+  <div class="card"><h3>IIT Bombay, IIM Ahmedabad, BITS Pilani</h3></div>
 `, '/student/saved')));
 
 app.get('/student/applications', c => c.html(renderRoleWorkspaceLayout('My Applications — Student', 'Student', studentNav, `
   <h1 style="font-size:2rem; font-weight:800; margin-bottom:0.5rem; color:var(--color-midnight-navy);">Application Tracker</h1>
   <p style="color:var(--color-text-muted); margin-bottom:1.5rem;">Monitor application statuses across target institutions.</p>
-  <div class="card">
-    <span class="badge badge-grade">Submitted</span>
-    <h3 style="margin-top:0.5rem;">B.Tech CSE Application — IIT Bombay</h3>
-  </div>
+  <div class="card"><span class="badge badge-grade">Submitted</span><h3 style="margin-top:0.5rem;">B.Tech CSE Application — IIT Bombay</h3></div>
 `, '/student/applications')));
 
-// 3. ROLE 2: College Representative Dashboard & Sub-modules
 const repNav = [
   { title: 'Overview', items: [{ label: 'Dashboard', href: '/rep/dashboard' }] },
-  { title: 'Institution Profile', items: [{ label: 'College Profile', href: '/rep/profile' }, { label: 'Courses & Fees', href: '/rep/courses' }, { label: 'Placements & Faculty', href: '/rep/placements' }] },
-  { title: 'Student Enquiries', items: [{ label: 'Applications & Messages', href: '/rep/enquiries' }] },
-  { title: 'Analytics', items: [{ label: 'Profile Analytics', href: '/rep/analytics' }] }
+  { title: 'Institution Profile', items: [{ label: 'College Profile', href: '/rep/profile' }] }
 ];
 
 app.get('/rep/dashboard', c => c.html(renderRoleWorkspaceLayout('Representative Portal', 'College Representative', repNav, `
@@ -452,82 +619,40 @@ app.get('/rep/dashboard', c => c.html(renderRoleWorkspaceLayout('Representative 
   </div>
 `, '/rep/dashboard')));
 
-app.get('/rep/profile', c => c.html(renderRoleWorkspaceLayout('College Profile Editor — Rep', 'College Representative', repNav, `
-  <h1 style="font-size:2rem; font-weight:800; margin-bottom:0.5rem; color:var(--color-midnight-navy);">College Profile Editor</h1>
-  <div class="card">
-    <label style="font-weight:700; display:block; margin-bottom:0.5rem;">Overview & Highlights</label>
-    <textarea style="width:100%; height:120px; padding:0.75rem; border-radius:8px; border:1px solid #cbd5e1; font-family:inherit;">Indian Institute of Technology Bombay is a premier public technical research university located in Powai, Mumbai...</textarea>
-    <button class="btn btn-primary" style="margin-top:1rem;">Save Profile Updates</button>
-  </div>
-`, '/rep/profile')));
-
-// 4. ROLE 3: Content Manager Dashboard & Sub-modules
-const contentNav = [
-  { title: 'Overview', items: [{ label: 'Dashboard', href: '/content/dashboard' }] },
-  { title: 'Institutions', items: [{ label: 'Colleges Directory', href: '/content/colleges' }, { label: 'Universities', href: '/content/universities' }] },
-  { title: 'Academic Master', items: [{ label: 'Courses & Exams', href: '/content/academic' }, { label: 'NIRF Rankings', href: '/content/rankings' }] },
-  { title: 'Editorial & Media', items: [{ label: 'Articles & News', href: '/content/articles' }] }
-];
-
+const contentNav = [{ title: 'Overview', items: [{ label: 'Dashboard', href: '/content/dashboard' }] }];
 app.get('/content/dashboard', c => c.html(renderRoleWorkspaceLayout('Content Manager Portal', 'Content Manager', contentNav, `
   <h1 style="font-size:2rem; font-weight:800; margin-bottom:0.5rem; color:var(--color-midnight-navy);">Content Manager Dashboard</h1>
   <p style="color:var(--color-text-muted); margin-bottom:2rem;">Maintain institutional datasets, course catalogs, and editorial publications.</p>
   <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:1.5rem;">
     <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Total Institutions</span><h2 style="font-size:2rem; font-weight:800; color:var(--color-webfoxx-blue);">5,420</h2></div>
     <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Pending Edits</span><h2 style="font-size:2rem; font-weight:800; color:var(--color-midnight-navy);">12</h2></div>
-    <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Published Articles</span><h2 style="font-size:2rem; font-weight:800; color:var(--color-success);">142</h2></div>
   </div>
 `, '/content/dashboard')));
 
-// 5. ROLE 4: Moderator Dashboard & Sub-modules
-const moderatorNav = [
-  { title: 'Overview', items: [{ label: 'Dashboard', href: '/moderator/dashboard' }] },
-  { title: 'Moderation Queue', items: [{ label: 'Pending Reviews', href: '/moderator/reviews' }, { label: 'Rep Verifications', href: '/moderator/verifications' }] },
-  { title: 'Audit Logs', items: [{ label: 'Moderation Logs', href: '/moderator/logs' }] }
-];
-
+const moderatorNav = [{ title: 'Overview', items: [{ label: 'Dashboard', href: '/moderator/dashboard' }] }];
 app.get('/moderator/dashboard', c => c.html(renderRoleWorkspaceLayout('Moderator Portal', 'Moderator', moderatorNav, `
   <h1 style="font-size:2rem; font-weight:800; margin-bottom:0.5rem; color:var(--color-midnight-navy);">Moderator Dashboard</h1>
   <p style="color:var(--color-text-muted); margin-bottom:2rem;">Verify institutional claims, moderate student reviews, and approve representative credentials.</p>
   <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:1.5rem;">
     <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Pending Reviews</span><h2 style="font-size:2rem; font-weight:800; color:var(--color-webfoxx-blue);">18</h2></div>
-    <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Rep Verifications</span><h2 style="font-size:2rem; font-weight:800; color:var(--color-midnight-navy);">4</h2></div>
-    <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Moderation Score</span><h2 style="font-size:2rem; font-weight:800; color:var(--color-success);">99.8%</h2></div>
   </div>
 `, '/moderator/dashboard')));
 
-// 6. ROLE 5: Administrator Dashboard & Sub-modules
-const adminNav = [
-  { title: 'Overview', items: [{ label: 'Dashboard', href: '/admin/dashboard' }] },
-  { title: 'Governance', items: [{ label: 'Users & Permissions', href: '/admin/users' }, { label: 'Institutions Master', href: '/admin/institutions' }] },
-  { title: 'Operations', items: [{ label: 'Analytics Reports', href: '/admin/operations' }] }
-];
-
+const adminNav = [{ title: 'Overview', items: [{ label: 'Dashboard', href: '/admin/dashboard' }] }];
 app.get('/admin/dashboard', c => c.html(renderRoleWorkspaceLayout('Administrator Portal', 'Administrator', adminNav, `
   <h1 style="font-size:2rem; font-weight:800; margin-bottom:0.5rem; color:var(--color-midnight-navy);">Administrator Dashboard</h1>
   <p style="color:var(--color-text-muted); margin-bottom:2rem;">Governance over platform operations, users, institutional verification, and analytics.</p>
   <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:1.5rem;">
     <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Total Platform Users</span><h2 style="font-size:2rem; font-weight:800; color:var(--color-webfoxx-blue);">128,490</h2></div>
-    <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Verified Reps</span><h2 style="font-size:2rem; font-weight:800; color:var(--color-midnight-navy);">1,240</h2></div>
-    <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">System Operational Status</span><h2 style="font-size:1.25rem; font-weight:800; color:var(--color-success);">100% OPERATIONAL</h2></div>
   </div>
 `, '/admin/dashboard')));
 
-// 7. ROLE 6: Super Administrator Dashboard & Sub-modules
-const superAdminNav = [
-  { title: 'Overview', items: [{ label: 'Dashboard', href: '/superadmin/dashboard' }] },
-  { title: 'Organization', items: [{ label: 'Subscriptions & Billing', href: '/superadmin/organization' }] },
-  { title: 'Security', items: [{ label: 'API Keys & OAuth', href: '/superadmin/security' }] },
-  { title: 'Infrastructure', items: [{ label: 'System Health & Flags', href: '/superadmin/infrastructure' }] }
-];
-
+const superAdminNav = [{ title: 'Overview', items: [{ label: 'Dashboard', href: '/superadmin/dashboard' }] }];
 app.get('/superadmin/dashboard', c => c.html(renderRoleWorkspaceLayout('Super Administrator Portal', 'Super Administrator', superAdminNav, `
   <h1 style="font-size:2rem; font-weight:800; margin-bottom:0.5rem; color:var(--color-midnight-navy);">Super Administrator Dashboard</h1>
   <p style="color:var(--color-text-muted); margin-bottom:2rem;">Global platform control, infrastructure health monitoring, security API keys, and feature flags.</p>
   <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:1.5rem;">
     <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Active Feature Flags</span><h2 style="font-size:2rem; font-weight:800; color:var(--color-webfoxx-blue);">14 Enabled</h2></div>
-    <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Worker Request Rate</span><h2 style="font-size:2rem; font-weight:800; color:var(--color-midnight-navy);">4,200 req/min</h2></div>
-    <div class="card"><span style="color:var(--color-text-muted); font-size:0.85rem;">Edge Infrastructure Status</span><h2 style="font-size:1.25rem; font-weight:800; color:var(--color-success);">CLOUDFLARE EDGE OK</h2></div>
   </div>
 `, '/superadmin/dashboard')));
 
@@ -536,7 +661,6 @@ app.get('/health', c => c.json({
   status: 'OK',
   worker: 'webfoxx-colleges-worker',
   domain: 'college.webfoxx.com',
-  dashboards: ['Student', 'College Representative', 'Content Manager', 'Moderator', 'Administrator', 'Super Administrator'],
   timestamp: new Date().toISOString()
 }));
 
