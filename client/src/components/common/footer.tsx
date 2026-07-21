@@ -1,5 +1,8 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
+
 import { GraduationCap, ShieldCheck } from 'lucide-react';
 import { BRAND } from '@/lib/constants';
 
