@@ -60,6 +60,18 @@ const SEED_COLLEGES = [
   }
 ];
 
+// Lucide React SVG Outline Icon Helpers (Chapter 19 Compliant)
+const ICONS = {
+  GraduationCap: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>`,
+  ShieldCheck: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>`,
+  Smartphone: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>`,
+  MapPin: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>`,
+  Star: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
+  CheckCircle2: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon text-success"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>`,
+  Building2: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 0 2 2h-4"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>`,
+  Scale: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h18"/></svg>`
+};
+
 // Layout wrapper helper
 function renderLayout(title: string, content: string, currentPath: string = '/') {
   return `<!DOCTYPE html>
@@ -107,6 +119,9 @@ function renderLayout(title: string, content: string, currentPath: string = '/')
     }
     a { text-decoration: none; color: inherit; }
     .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+    .flex-align { display: flex; align-items: center; gap: 0.4rem; }
+    .lucide-icon { display: inline-block; vertical-align: middle; flex-shrink: 0; }
+    .text-success { color: var(--color-success); }
 
     /* Header */
     .site-header {
@@ -122,7 +137,7 @@ function renderLayout(title: string, content: string, currentPath: string = '/')
     .brand-icon {
       width: 40px; height: 40px; border-radius: var(--radius-md);
       background-color: var(--color-webfoxx-blue-light); color: var(--color-webfoxx-blue);
-      display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.2rem;
+      display: flex; align-items: center; justify-content: center;
     }
     .brand-title { font-weight: 800; font-size: 1.25rem; color: var(--color-midnight-navy); line-height: 1.1; }
     .brand-tagline { font-size: 0.75rem; color: var(--color-webfoxx-blue); font-weight: 700; display: block; }
@@ -171,7 +186,7 @@ function renderLayout(title: string, content: string, currentPath: string = '/')
   <header class="site-header">
     <div class="container header-inner">
       <a href="/" class="brand-logo">
-        <div class="brand-icon">🎓</div>
+        <div class="brand-icon">${ICONS.GraduationCap}</div>
         <div>
           <span class="brand-title">WebFoxx Colleges</span>
           <span class="brand-tagline">Find Colleges. Not Spam.</span>
@@ -185,8 +200,8 @@ function renderLayout(title: string, content: string, currentPath: string = '/')
         <a href="/student/dashboard" class="nav-link ${currentPath.startsWith('/student') ? 'active' : ''}">Student Portal</a>
       </nav>
       <div class="header-actions">
-        <a href="/login" class="btn btn-outline btn-sm">📱 Mobile OTP</a>
-        <a href="/compare" class="btn btn-primary btn-sm">Compare Colleges</a>
+        <a href="/login" class="btn btn-outline btn-sm flex-align">${ICONS.Smartphone} <span>Mobile OTP</span></a>
+        <a href="/compare" class="btn btn-primary btn-sm flex-align">${ICONS.Scale} <span>Compare Colleges</span></a>
       </div>
     </div>
   </header>
@@ -199,7 +214,7 @@ function renderLayout(title: string, content: string, currentPath: string = '/')
     <div class="container footer-content">
       <div>
         <div class="brand-logo" style="margin-bottom: 0.5rem;">
-          <div class="brand-icon">🎓</div>
+          <div class="brand-icon">${ICONS.GraduationCap}</div>
           <span class="brand-title" style="color:#fff;">WebFoxx Colleges</span>
         </div>
         <p style="color:#60a5fa; font-weight:700; font-size:0.9rem;">"Find Colleges. Not Spam."</p>
@@ -227,7 +242,7 @@ function renderLayout(title: string, content: string, currentPath: string = '/')
     <div class="footer-bottom">
       <div class="container bottom-inner">
         <p>© 2026 WebFoxx Colleges. All rights reserved.</p>
-        <span class="trust-badge">🛡️ 100% Verified Data & Privacy Guaranteed</span>
+        <span class="trust-badge flex-align">${ICONS.ShieldCheck} <span>100% Verified Data & Privacy Guaranteed</span></span>
       </div>
     </div>
   </footer>
@@ -240,8 +255,8 @@ app.get('/', (c) => {
   const content = `
   <section style="background-color: var(--color-midnight-navy); color: #fff; padding: 4rem 0 5rem;">
     <div class="container" style="text-align: center; max-width: 800px;">
-      <span style="background-color: rgba(37,99,235,0.2); color: #60a5fa; padding: 0.3rem 1rem; border-radius: var(--radius-full); font-size: 0.85rem; font-weight: 700; display: inline-block; margin-bottom: 1.25rem;">
-        🛡️ ZERO SPAM CALLS GUARANTEE
+      <span style="background-color: rgba(37,99,235,0.2); color: #60a5fa; padding: 0.35rem 1rem; border-radius: var(--radius-full); font-size: 0.85rem; font-weight: 700; display: inline-flex; align-items: center; gap: 0.4rem; margin-bottom: 1.25rem;">
+        ${ICONS.ShieldCheck} ZERO SPAM CALLS GUARANTEE
       </span>
       <h1 style="font-size: 2.75rem; font-weight: 800; line-height: 1.2; margin-bottom: 1rem;">
         Find India's Best Colleges. <br><span style="color: #60a5fa;">Without Spam Telecallers.</span>
@@ -275,7 +290,9 @@ app.get('/', (c) => {
               <span class="badge badge-ownership">${col.ownership}</span>
             </div>
             <h3 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.4rem; color: var(--color-midnight-navy);">${col.name}</h3>
-            <p style="color: var(--color-text-muted); font-size: 0.875rem; margin-bottom: 1rem;">📍 ${col.location.city}, ${col.location.state} • Est. ${col.establishmentYear}</p>
+            <p style="color: var(--color-text-muted); font-size: 0.875rem; margin-bottom: 1rem;" class="flex-align">
+              ${ICONS.MapPin} <span>${col.location.city}, ${col.location.state} • Est. ${col.establishmentYear}</span>
+            </p>
             
             <div style="background-color: var(--color-background-gray); padding: 1rem; border-radius: var(--radius-md); display: flex; justify-content: space-between; margin-bottom: 1.25rem;" class="data-text">
               <div>
@@ -321,8 +338,8 @@ app.get('/colleges/:slug', (c) => {
   <section style="background-color: var(--color-midnight-navy); color: #fff; padding: 3rem 0;">
     <div class="container">
       <div style="display: flex; align-items: flex-start; gap: 2rem;">
-        <div style="width: 72px; height: 72px; background: #fff; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; font-size: 2.2rem; flex-shrink:0;">
-          🏫
+        <div style="width: 72px; height: 72px; background: #fff; color: var(--color-webfoxx-blue); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; flex-shrink:0;">
+          ${ICONS.Building2}
         </div>
         <div style="flex:1;">
           <div style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem;">
@@ -330,10 +347,13 @@ app.get('/colleges/:slug', (c) => {
             <span class="badge badge-ownership">${col.ownership} Institution</span>
           </div>
           <h1 style="font-size: 2.25rem; font-weight: 800; margin-bottom: 0.4rem;">${col.name}</h1>
-          <p style="color: #94a3b8; font-size: 0.95rem;">📍 ${col.location.city}, ${col.location.state} • Est. ${col.establishmentYear} • Rating ⭐ ${col.rating}/5.0</p>
+          <p style="color: #94a3b8; font-size: 0.95rem;" class="flex-align">
+            ${ICONS.MapPin} <span>${col.location.city}, ${col.location.state} • Est. ${col.establishmentYear}</span>
+            <span style="display: inline-flex; align-items: center; gap: 0.2rem; color: #f59e0b; font-weight: 700; margin-left: 0.5rem;">${ICONS.Star} ${col.rating}/5.0</span>
+          </p>
         </div>
         <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-          <a href="/compare?colleges=${col.id}" class="btn btn-primary">Scale Compare</a>
+          <a href="/compare?colleges=${col.id}" class="btn btn-primary flex-align">${ICONS.Scale} <span>Compare College</span></a>
           <button onclick="alert('Instant PDF brochure download initiated! Zero spam calls promise.')" class="btn btn-outline" style="background:#fff;">Download Brochure</button>
         </div>
       </div>
@@ -351,14 +371,14 @@ app.get('/colleges/:slug', (c) => {
         <div class="card" style="margin-bottom: 2rem;">
           <h2 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 1rem; color: var(--color-midnight-navy);">Key Highlights</h2>
           <ul style="list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-            ${col.highlights.map(h => `<li style="font-weight: 600; color: var(--color-midnight-navy);">✅ ${h}</li>`).join('')}
+            ${col.highlights.map(h => `<li style="font-weight: 600; color: var(--color-midnight-navy);" class="flex-align">${ICONS.CheckCircle2} <span>${h}</span></li>`).join('')}
           </ul>
         </div>
 
         <div class="card">
           <h2 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 1rem; color: var(--color-midnight-navy);">Campus Facilities</h2>
           <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
-            ${col.facilities.map(f => `<div style="background: var(--color-background-gray); padding: 0.85rem 1rem; border-radius: var(--radius-md); font-weight: 600;">🏢 ${f}</div>`).join('')}
+            ${col.facilities.map(f => `<div style="background: var(--color-background-gray); padding: 0.85rem 1rem; border-radius: var(--radius-md); font-weight: 600;" class="flex-align">${ICONS.Building2} <span>${f}</span></div>`).join('')}
           </div>
         </div>
       </div>
@@ -460,7 +480,9 @@ app.get('/search', (c) => {
               <span class="badge badge-ownership">${col.ownership}</span>
             </div>
             <h3 style="font-size: 1.35rem; font-weight: 800; color: var(--color-midnight-navy);">${col.name}</h3>
-            <p style="color: var(--color-text-muted); font-size: 0.9rem;">📍 ${col.location.city}, ${col.location.state} • Est. ${col.establishmentYear}</p>
+            <p style="color: var(--color-text-muted); font-size: 0.9rem;" class="flex-align">
+              ${ICONS.MapPin} <span>${col.location.city}, ${col.location.state} • Est. ${col.establishmentYear}</span>
+            </p>
           </div>
           <div style="text-align: right; display: flex; flex-direction: column; gap: 0.75rem;" class="data-text">
             <div>
@@ -538,7 +560,7 @@ app.get('/student/dashboard', (c) => {
       </div>
       <div class="card">
         <span style="font-size: 0.85rem; color: var(--color-text-muted);">Privacy Guarantee</span>
-        <h3 style="font-size: 1.2rem; font-weight: 800; color: #16a34a; margin-top: 0.5rem;">Zero Spam Calls</h3>
+        <h3 style="font-size: 1.2rem; font-weight: 800; color: #16a34a; margin-top: 0.5rem;" class="flex-align">${ICONS.ShieldCheck} <span>Zero Spam Guarantee</span></h3>
       </div>
     </div>
   </section>

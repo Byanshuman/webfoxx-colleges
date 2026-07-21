@@ -2,7 +2,8 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Scale, Building2, Star, Plus } from 'lucide-react';
+import { Scale, Building2, Star, Plus, X } from 'lucide-react';
+
 import { Header } from '@/components/common/header';
 import { Footer } from '@/components/common/footer';
 import { SEED_COLLEGES, SEED_PLACEMENTS } from '@/db/seeds/colleges.seed';
@@ -60,7 +61,7 @@ export default function ComparePage() {
                           onClick={() => removeCollegeFromCompare(college.id)}
                           title="Remove from comparison"
                         >
-                          ✕
+                          <X size={14} />
                         </button>
                         <div className="college-logo-placeholder">
                           <Building2 size={28} className="text-webfoxx-blue" />
