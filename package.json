@@ -6,6 +6,8 @@
   "scripts": {
     "dev:client": "npm --prefix client run dev",
     "dev:server": "npm --prefix server run dev",
+    "dev:worker": "npm --prefix worker run dev",
+    "deploy:worker": "npm --prefix worker run deploy",
     "build:client": "npm --prefix client run build",
     "build:server": "npm --prefix server run build",
     "build": "npm run build:client && npm run build:server",
@@ -14,6 +16,7 @@
   },
   "workspaces": [
     "client",
-    "server"
+    "server",
+    "worker"
   ]
 }
