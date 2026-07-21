@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import collegeRoutes from './routes/college.routes.js';
 import authRoutes from './routes/auth.routes.js';
+import recommendationRoutes from './routes/recommendation.routes.js';
 
 dotenv.config();
 
@@ -15,6 +16,7 @@ app.use(express.json());
 // API v1 Routes
 app.use('/api/v1/colleges', collegeRoutes);
 app.use('/api/v1/auth', authRoutes);
+app.use('/api/v1/recommendations', recommendationRoutes);
 
 // Health Check
 app.get('/health', (req, res) => {
@@ -22,7 +24,5 @@ app.get('/health', (req, res) => {
 });
 
 app.listen(Number(PORT), '0.0.0.0', () => {
-  console.log(`WebFoxx Colleges Server running on port ${PORT}`);
+  console.log(`WebFoxx Colleges Backend running on port ${PORT}`);
 });
-
-
