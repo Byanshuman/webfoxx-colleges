@@ -35,8 +35,8 @@ export const Footer: React.FC = () => {
           <Link href="/compare">Compare Colleges</Link>
           <Link href="/search">Advanced College Search</Link>
           <Link href="/student/dashboard">Student Portal</Link>
-          <Link href="/cms/dashboard">CMS Admin Panel</Link>
         </div>
+
 
         <div className="footer-links-group">
           <h4>Legal & Trust</h4>

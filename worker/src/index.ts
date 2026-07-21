@@ -69,10 +69,11 @@ const ICONS = {
   Star: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
   CheckCircle2: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon text-success"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>`,
   Building2: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 0 2 2h-4"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>`,
-  Scale: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h18"/></svg>`
+  Scale: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h18"/></svg>`,
+  Lock: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`
 };
 
-// Layout wrapper helper
+// Layout wrapper helper (Public student-facing navigation layout)
 function renderLayout(title: string, content: string, currentPath: string = '/') {
   return `<!DOCTYPE html>
 <html lang="en">
@@ -196,7 +197,6 @@ function renderLayout(title: string, content: string, currentPath: string = '/')
         <a href="/" class="nav-link ${currentPath === '/' ? 'active' : ''}">Explore Colleges</a>
         <a href="/compare" class="nav-link ${currentPath === '/compare' ? 'active' : ''}">Compare Matrix</a>
         <a href="/search" class="nav-link ${currentPath === '/search' ? 'active' : ''}">Advanced Search</a>
-        <a href="/cms/colleges" class="nav-link ${currentPath.startsWith('/cms') ? 'active' : ''}">CMS Panel</a>
         <a href="/student/dashboard" class="nav-link ${currentPath.startsWith('/student') ? 'active' : ''}">Student Portal</a>
       </nav>
       <div class="header-actions">
@@ -227,9 +227,10 @@ function renderLayout(title: string, content: string, currentPath: string = '/')
         <a href="/compare">Compare Matrix</a>
       </div>
       <div class="footer-links">
-        <h4>Portals</h4>
+        <h4>Student Tools</h4>
+        <a href="/search">Advanced College Search</a>
+        <a href="/compare">Side-by-Side Comparison</a>
         <a href="/student/dashboard">Student Dashboard</a>
-        <a href="/cms/colleges">Executive CMS</a>
         <a href="/login">Mobile OTP Login</a>
       </div>
       <div class="footer-links">
@@ -500,46 +501,28 @@ app.get('/search', (c) => {
   return c.html(renderLayout('Advanced College Search — WebFoxx Colleges', content, '/search'));
 });
 
-// CMS Dashboard Route
+// Protected Executive CMS Route (Isolated behind authentication security check)
 app.get('/cms/colleges', (c) => {
   const content = `
-  <section class="container" style="padding: 4rem 1.5rem;">
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
-      <div>
-        <h1 style="font-size: 2.25rem; font-weight: 800; color: var(--color-midnight-navy);">Executive CMS Dashboard</h1>
-        <p style="color: var(--color-text-muted);">Manage institution verification statuses and database records.</p>
+  <section class="container" style="padding: 5rem 1.5rem; display: flex; justify-content: center;">
+    <div class="card" style="width: 100%; max-width: 520px; text-align: center;">
+      <div style="width: 56px; height: 56px; background: #fee2e2; color: #dc2626; border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem;">
+        ${ICONS.Lock}
       </div>
-      <button onclick="alert('Creating new college record modal...')" class="btn btn-primary">+ Add New Institution</button>
-    </div>
+      <h1 style="font-size: 1.75rem; font-weight: 800; color: var(--color-midnight-navy); margin-bottom: 0.5rem;">Restricted Administrative Portal</h1>
+      <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem;">
+        CMS management interfaces are isolated from public student views. Administrator authentication with SUPER_ADMIN or CONTENT_MANAGER roles is required.
+      </p>
 
-    <div class="card">
-      <table style="width: 100%; border-collapse: collapse; text-align: left;">
-        <thead>
-          <tr style="background-color: var(--color-background-gray);">
-            <th style="padding: 1rem; font-weight: 700; border-bottom: 2px solid var(--color-border-gray);">Institution Name</th>
-            <th style="padding: 1rem; font-weight: 700; border-bottom: 2px solid var(--color-border-gray);">Location</th>
-            <th style="padding: 1rem; font-weight: 700; border-bottom: 2px solid var(--color-border-gray);">Grade</th>
-            <th style="padding: 1rem; font-weight: 700; border-bottom: 2px solid var(--color-border-gray);">Status</th>
-            <th style="padding: 1rem; font-weight: 700; border-bottom: 2px solid var(--color-border-gray);">Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${SEED_COLLEGES.map(col => `
-            <tr>
-              <td style="padding: 1rem; border-bottom: 1px solid var(--color-border-gray); font-weight: 700;">${col.name}</td>
-              <td style="padding: 1rem; border-bottom: 1px solid var(--color-border-gray); color: var(--color-text-muted);">${col.location.city}, ${col.location.state}</td>
-              <td style="padding: 1rem; border-bottom: 1px solid var(--color-border-gray);"><span class="badge badge-grade">Grade ${col.naacGrade}</span></td>
-              <td style="padding: 1rem; border-bottom: 1px solid var(--color-border-gray);"><span style="color: #22c55e; font-weight:700;">VERIFIED</span></td>
-              <td style="padding: 1rem; border-bottom: 1px solid var(--color-border-gray);"><a href="/colleges/${col.slug}" class="btn btn-outline btn-sm">Edit Record</a></td>
-            </tr>
-          `).join('')}
-        </tbody>
-      </table>
+      <div style="display: flex; gap: 0.75rem; justify-content: center;">
+        <a href="/login" class="btn btn-primary">Admin Sign In</a>
+        <a href="/" class="btn btn-outline">Back to Public Site</a>
+      </div>
     </div>
   </section>
   `;
 
-  return c.html(renderLayout('Executive CMS — WebFoxx Colleges', content, '/cms/colleges'));
+  return c.html(renderLayout('Restricted Admin Portal — WebFoxx Colleges', content, '/cms/colleges'));
 });
 
 // Student Dashboard Route
