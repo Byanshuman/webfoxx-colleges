@@ -1,11 +1,22 @@
-// User Entity Schema & Audit Logs (Section 4.15 & Chapter 13)
+// Shared Firebase Ecosystem User Entity Schema & Audit Logs
+
+export type WebFoxxEcosystemRole =
+  | 'academy_student'
+  | 'college_student'
+  | 'college_representative'
+  | 'content_manager'
+  | 'moderator'
+  | 'administrator'
+  | 'super_administrator';
 
 export interface DBUser {
   id: string;
+  firebaseUid?: string;
   mobile: string;
   email?: string;
   fullName: string;
-  role: 'SUPER_ADMIN' | 'CONTENT_MANAGER' | 'VERIFICATION_OFFICER' | 'INSTITUTION_ADMIN' | 'STUDENT';
+  roles: WebFoxxEcosystemRole[];
+  primaryRole: WebFoxxEcosystemRole;
   isMobileVerified: boolean;
   isEmailVerified: boolean;
   savedColleges: string[];
